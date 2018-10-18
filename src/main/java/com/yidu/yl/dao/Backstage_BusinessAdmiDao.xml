@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidu.yl.dao.Backstage_BusinessAdmiDao">
+	<select id="selectBusinessAdmi" resultType="BusinessAdmi">
+		SELECT * FROM business_admi
+	</select>
+	<select id="selectBusinessAdmiCountNum" resultType="int">
+		SELECT count(*) FROM business_admi
+	</select>
+	<insert id="insert_BusinessAdmi" parameterType="BusinessAdmi">
+		INSERT INTO Business_admi(Bus_collectionUserName,Bus_collectionUserPhoneNum,Bus_collectionUserAddress,Bus_collectionDetailedAddress,Bus_goodsWeight,Bus_remarksMsg,
+		Bus_mailUserName,Bus_mailUserPhoneNum,Bus_mailAddress,Bus_mailDetailedAddress,Bus_AuditStatus,Bus_generationTime,AccountNumber,Bus_bookingTime,Bus_jobNum)
+		VALUES(#{bus_collectionUserName},#{bus_collectionUserPhoneNum},#{bus_collectionUserAddress},#{bus_collectionDetailedAddress},#{bus_goodsWeight},
+		#{bus_remarksMsg},#{bus_mailUserName},#{bus_mailUserPhoneNum},#{bus_mailAddress},#{bus_mailDetailedAddress},#{bus_AuditStatus},NOW(),#{accountNumber},#{bus_bookingTime},#{bus_jobNum});
+	</insert>
+</mapper>
